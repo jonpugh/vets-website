@@ -15,7 +15,6 @@ export default class PhoneEditModal extends React.Component {
   };
 
   onChange = field => ({ value, dirty }) => {
-    
     const newFieldValue = {
       ...this.props.field.value,
       [field]: value,
@@ -24,15 +23,14 @@ export default class PhoneEditModal extends React.Component {
     this.props.onChange(newFieldValue, dirty);
   };
 
-  onCheckboxChange = field => (value) => {
-   
+  onCheckboxChange = field => value => {
     const newFieldValue = {
       ...this.props.field.value,
       [field]: value,
     };
-    
-    this.props.onChange(newFieldValue, true);    
-  }
+
+    this.props.onChange(newFieldValue, true);
+  };
 
   getInitialFormValues = () => {
     let defaultFieldValue;
@@ -57,13 +55,16 @@ export default class PhoneEditModal extends React.Component {
   };
 
   renderCheckbox = () => {
-    return (this.props.field.value.isTextable) 
-      ? <ErrorableCheckbox
-          label={<span>Receive text messages (SMS) for VA health care appointment reminders.</span>}
-          field={{ value: this.props.field.value.isTextPermitted, dirty: false }}
-          checked={this.props.field.value.isTextPermitted}
-          onValueChange={this.onCheckboxChange('isTextPermitted')} /> 
-      : null;
+    // TODO: Also check if they are enrolled in healthcare.
+    const rendering = this.props.field.value.isTextable ? (
+      <ErrorableCheckbox
+        label="Receive text messages (SMS) for VA health care appointment reminders."
+        field={{ value: this.props.field.value.isTextPermitted, dirty: false }}
+        checked={this.props.field.value.isTextPermitted}
+        onValueChange={this.onCheckboxChange('isTextPermitted')}
+      />
+    ) : null;
+    return rendering;
   };
 
   renderForm = () => (
@@ -91,9 +92,8 @@ export default class PhoneEditModal extends React.Component {
         field={{ value: this.props.field.value.extension, dirty: false }}
         onValueChange={this.onChange('extension')}
       />
-      
+
       {this.renderCheckbox()}
-          
     </div>
   );
 
