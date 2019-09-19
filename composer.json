@@ -1,6 +1,6 @@
 {
     "name": "va-gov/web",
-    "description": "Front-end for VA.gov. This file only exists so this project can be included as a dependency as the VA.gov CMS: https://github.com/department-of-veterans-affairs/va.gov-cms/blob/VAGOV-2937-unity/composer.json#L86",
+    "description": "Front-end for VA.gov. This project is a Metalsmith static site builder that uses a Drupal CMS for content. This file is here to publish releases to Packagist, so that the CMS CI system can include it and update it using standard composer update processes. See https://github.com/department-of-veterans-affairs/va.gov-cms",
     "type": "project",
     "require": {},
     "license": "CC0-1.0",
