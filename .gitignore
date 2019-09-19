@@ -34,5 +34,5 @@ all-links.csv
 .tern-port
 
 # Ignore composer vendor code
-./vendor
+vendor
 composer.lock
