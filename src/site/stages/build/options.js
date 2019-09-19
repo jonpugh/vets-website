@@ -33,6 +33,11 @@ const COMMAND_LINE_OPTIONS_DEFINITIONS = [
   { name: 'pull-drupal', type: Boolean, defaultValue: false },
   { name: 'drupal-fail-fast', type: Boolean, defaultValue: false },
   {
+    name: 'use-proxy',
+    type: Boolean,
+    defaultValue: process.env.USE_PROXY,
+  },
+  {
     name: 'drupal-address',
     type: String,
     defaultValue: process.env.DRUPAL_ADDRESS,
