@@ -14,9 +14,10 @@
     ],
     "minimum-stability": "dev",
     "extra": {
+        "installer-types": ["node-project"],
         "installer-paths": {
             "web/": [
-                "va-gov/web"
+                "type:node-project"
             ]
         }
     }
