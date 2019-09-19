@@ -1,7 +1,7 @@
 {
     "name": "va-gov/web",
     "description": "Front-end for VA.gov. This file only exists so this project can be included as a dependency as the VA.gov CMS: https://github.com/department-of-veterans-affairs/va.gov-cms/blob/VAGOV-2937-unity/composer.json#L86",
-    "type": "project",
+    "type": "library",
     "require": {},
     "license": "CC0-1.0",
     "authors": [
