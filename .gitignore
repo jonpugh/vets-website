@@ -32,3 +32,7 @@ temp
 .swo
 all-links.csv
 .tern-port
+
+# Ignore composer vendor code
+./vendor
+composer.lock
